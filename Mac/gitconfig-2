@@ -1,0 +1,30 @@
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[user]
+	name = Rees Klintworth
+	email = rees.klintworth@gmail.com
+[push]
+	default = simple
+[alias]
+	br = checkout -b
+	co = checkout
+	st = status
+	aa = add -A
+	cm = commit
+	ca = commit --amend
+	d = diff
+	branches = branch
+	delete = branch -d
+	Delete = branch -D
+	rename = branch -m
+	stashes = stash list
+	uc = git reset --soft HEAD~1
+[color "diff"]
+	new = green bold
+	old = red bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
