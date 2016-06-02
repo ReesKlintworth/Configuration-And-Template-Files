@@ -1,30 +1,40 @@
+[alias]
+	co = checkout
+	br = checkout -b
+	branches = branch -a
+	st = status
+	d = diff	
+[core]
+	excludesfile = /Users/Rees/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = ReesKlintworth
+	email = rees.klintworth@gmail.com
+[push]
+	default = simple
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true
+[color "status"]
+	added = green
+	changed = yellow
+	untracked = cyan
+[color "diff"]
+	meta = yellow
+	frag = cyan 
+	old = red bold
+	new = green bold
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
-[user]
-	name = Rees Klintworth
-	email = rees.klintworth@gmail.com
-[push]
-	default = simple
-[alias]
-	br = checkout -b
-	co = checkout
-	st = status
-	aa = add -A
-	cm = commit
-	ca = commit --amend
-	d = diff
-	branches = branch
-	delete = branch -d
-	Delete = branch -D
-	rename = branch -m
-	stashes = stash list
-	uc = git reset --soft HEAD~1
-[color "diff"]
-	new = green bold
-	old = red bold
-[color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
